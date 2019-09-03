@@ -20,6 +20,34 @@ $(document).ready(() => {
         }
     }, 5000)
 
+    function getTouchPos(e) {
+        const rect = canvas.getBoundingClientRect();
+        return {
+            x: e.touches[0].clientX - rect.left,
+            y: e.touches[0].clientY - rect.top
+        }
+    }
+
+    canvas.addEventListener("touchstart", (e) => {
+        e.preventDefault();
+        const touchPos = getTouchPos(e);
+        sent = false;
+        paint = true;
+        addClick(touchPos.x, touchPos.y, false);
+        redraw();
+    });
+
+    canvas.addEventListener("touchmove", (e) => {
+        e.preventDefault();
+        if (paint) {
+            const touchPos = getTouchPos(e);
+            addClick(touchPos.x, touchPos.y, true);
+            redraw();
+        }
+    });
+    
+    canvas.addEventListener("touchend", (_) => {paint = false});
+
     $('#canvas').mousedown((e) => {
         sent = false;
         paint = true;
@@ -34,13 +62,9 @@ $(document).ready(() => {
         }
     });
 
-    $('#canvas').mouseup((_) => {
-        paint = false;
-    });
+    $('#canvas').mouseup((_) => {paint = false});
 
-    $('#canvas').mouseleave((_) => {
-        paint = false;
-    });
+    $('#canvas').mouseleave((_) => {paint = false});
 
     function isCanvasBlank() {
         return !ctx.getImageData(0, 0, canvas.width, canvas.height).data
