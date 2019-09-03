@@ -1,0 +1,20 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.page-header-image {
+    background-image: url('./assets/img/bg8.jpg');
+}
+
+#canvas {
+    border-radius: 20px;
+}
+
+.card {
+    border-radius: 20px;
+}
+
+.footer-dark {
+    background-color:#2c2c2c;
+    color: white;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/now-ui-kit.min.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Alphabet Recognizer</title>
+</head>
+<body class="landing-page sidebar-collapse">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent" color-on-scroll="500">
+        <div class="container justify-content-start">
+          <div class="dropdown button-dropdown">
+            <a href="#pablo" class="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
+              <span class="button-bar"></span>
+              <span class="button-bar"></span>
+              <span class="button-bar"></span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-header">Pages</a>
+              <a class="dropdown-item" href="#about">About</a>
+              <a class="dropdown-item" href="#canvas-container">Canvas</a>
+            </div>
+          </div>
+          <div class="navbar-translate">
+            <a class="navbar-brand" href="#" rel="tooltip" data-placement="bottom" target="_blank">
+              Alpha Recognizer
+            </a>
+            <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-bar top-bar"></span>
+              <span class="navbar-toggler-bar middle-bar"></span>
+              <span class="navbar-toggler-bar bottom-bar"></span>
+            </button>
+          </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+    <div class="wrapper">
+        <div class="page-header">
+            <div class="page-header-image" data-parallax="true"></div>
+            <div class="content-center">
+                <div class="container">
+                    <h1 class="title">AlphaRecognizer</h1>
+                    <p>A machine that recognizes the English Alphabets your draw.</p>
+                    <div class="text-center">
+                        <a href="#canvas-container" class="btn btn-primary btn-round btn-lg">
+                            Try Me!
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="about" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto text-center">
+                    <h2 class="title">What is AlphaRecognizer?</h2>
+                    <h5 class="description">
+                        Alpha(bet)Recognizer is convoluted neural network(CNN) trained on hand drawn images of the English alphabet from the <a href="https://www.nist.gov/node/1298471/emnist-dataset">EMNIST</a> dataset.
+                        AlphaRecgonizer is unique because it leverages a deep learning technique called Transfer Learning, training a model ontop of a pre-existing model.
+                        AlphaRecognizer is trained ontop of the RESNet-50 model for 15 epochs. After 15 epochs, it is then trained with its base layers unfrozen for 4 epochs.
+                        AlphaRecognizer has an accuracy of 99% but it still needs some help learning. So draw some letters to confuse the model and <a href="#canvas-container">help it learn!</a>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="canvas-container" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 ml-auto mr-2 text-center">
+                    <h2 class="title">AR Canvas</h2>
+                    <h3 class="description">
+                        To get started draw any alphabet in the English language in uppercase.
+                    </h3>
+                </div>
+                <div class="col-md-4 ml-2 mr-auto">
+                        <div class="card text-center">
+                            <div class="card-header mt-2">
+                                <h4 id="res">Ready!</h4>
+                                <button id="clear" class="btn btn-primary btn-round">Clear</button>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="canvas" width="300px" height="300px"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer footer-dark">
+        <p class="text-center">Made with <span style="color: #e25555;">&hearts;</span> by Yesh Chandiramani</p>
+    </footer>
+    
+    <!-- Core JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="./assets/js/core/jquery.min.js"></script>
+    <script src="./assets/js/core/popper.min.js"></script>
+    <script src="./assets/js/core/bootstrap.min.js"></script>
+    <!-- Plugin for Switches -->
+    <script src="./assets/js/plugins/bootstrap-switch.js"></script>
+    <!-- Plugin for Sliders -->
+    <script src="./assets/js/plugins/nouislider.min.js"></script>
+    <!-- Plugin for Datepicker -->
+    <script src="./assets/js/plugins/bootstrap-datepicker.js"></script>
+    <!-- Now UI Kit's magic -->
+    <script src="./assets/js/now-ui-kit.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
